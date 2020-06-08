@@ -4,5 +4,5 @@
 # Copyright 2018-present David Rabkin
 
 module Transcode
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'
 end
