@@ -7,7 +7,7 @@ require 'optparse'
 
 module Transcode
   # Handles input parameters.
-  class Configuration # rubocop:disable Metrics/ClassLength
+  class Configurator # rubocop:disable Metrics/ClassLength
     attr_reader :files
     DIC = [
       ['-a', '--act', 'Real encoding.', nil, :act],

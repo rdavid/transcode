@@ -12,7 +12,7 @@ module Transcode
   # Transcodes any video file to m4v format.
   class Transcoder
     def initialize
-      @cfg = Configuration.new
+      @cfg = Configurator.new
       @rep = Reporter.new(@cfg.act?, "#{@cfg.dir} -> #{@cfg.out}", @cfg.wid)
     end
 
