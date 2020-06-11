@@ -5,20 +5,27 @@
 
 # All methods are static.
 class Utils
+  @sep = '~'
   class << self
-    SEP = '~'
+    attr_accessor :sep
     def trim(src, lim)
+      return '' if src.nil? || lim.nil?
       return src if src.length <= lim
 
-      beg = fin = (lim - SEP.length) / 2
+      beg = fin = (lim - @sep.length) / 2
       beg -= 1 if lim.odd?
-      src[0..beg] + SEP + src[-fin..-1]
+      src[0..beg] + @sep + src[-fin..-1]
     end
   end
 end
 
 # Returns string with humanized time interval.
 class Timer
+  @less_sec = 'less than a second'
+  class << self
+    attr_reader :less_sec
+  end
+
   DIC = [
     [60,   :seconds, :second],
     [60,   :minutes, :minute],
@@ -35,7 +42,8 @@ class Timer
   end
 
   def humanize(sec)
-    return 'less than a second' if sec < 1
+    return '' if sec.nil?
+    return Timer.less_sec if sec < 1
 
     DIC.map do |cnt, nms, nm1|
       next if sec <= 0
