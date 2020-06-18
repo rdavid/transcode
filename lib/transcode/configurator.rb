@@ -84,6 +84,7 @@ module Transcode
     def validate_val(val, tag)
       f = files.size
       (@options[tag] = Array.new(f, '0')).nil? || return if val.nil?
+
       s = val.size
       if s == 1
         @options[tag] = Array.new(f, val.first)
