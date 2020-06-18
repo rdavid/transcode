@@ -36,13 +36,7 @@ module Transcode
     end
 
     def find_dir
-      if dir.nil?
-        @options[:dir] = Dir.pwd
-      else
-        raise "No such directory: #{dir}." unless File.directory?(dir)
-
-        @options[:dir] = File.expand_path(dir)
-      end
+      @options[:dir] = File.expand_path(dir.nil? ? Dir.pwd : dir)
       @options[:out] = File.expand_path(out.nil? ? '~' : out)
     end
 
@@ -55,18 +49,26 @@ module Transcode
     end
 
     def validate
-      validate_files
+      validate_dir(dir, false)
+      validate_dir(out, true)
+      validate_fil
       validate_tit
       validate_val(aud, :aud)
       validate_val(sub, :sub)
       raise "Width of the table should exeeds 14 symbols: #{wid}." if wid < 15
     end
 
-    def validate_files
-      raise "#{dir} doesn't have #{EXT} files or directories." if files.empty?
+    def validate_dir(dir, isw)
+      raise "#{dir}: No such directory." unless File.directory?(dir)
 
+      err = isw ? File.writable?(dir) : File.readable?(dir)
+      raise "#{out}: Permission denied." unless err
+    end
+
+    def validate_fil
       bad = files.reject { |f| File.readable?(f) }
-      raise "Unable to read #{bad} files." unless bad.empty?
+      raise "#{dir} doesn't have #{EXT} files or directories." if files.empty?
+      raise "#{bad.join(',')}: Permission denied." unless bad.empty?
     end
 
     def validate_tit # rubocop:disable Metrics/AbcSize
