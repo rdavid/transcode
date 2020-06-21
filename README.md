@@ -5,10 +5,11 @@ Tool to transcode batch of video files.
 Status](https://travis-ci.org/rdavid/transcode.svg)](https://travis-ci.org/rdavid/transcode)
 [![Build
 status](https://ci.appveyor.com/api/projects/status/yqxb43ltxrjj776a?svg=true)](https://ci.appveyor.com/project/rdavid/transcode)
+![Ruby](https://github.com/rdavid/transcode/workflows/Ruby/badge.svg)
 [![Gem
 Version](https://badge.fury.io/rb/transcode.svg)](https://badge.fury.io/rb/transcode)
-[![Maintainability](https://api.codeclimate.com/v1/badges/5e21a1c1f8a3923584e3/maintainability)](https://codeclimate.com/github/rdavid/transcode/maintainability)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/5e21a1c1f8a3923584e3/maintainability)](https://codeclimate.com/github/rdavid/transcode/maintainability)
 [![Hits-of-Code](https://hitsofcode.com/github/rdavid/transcode)](https://hitsofcode.com/view/github/rdavid/transcode)
 [![License](https://img.shields.io/github/license/rdavid/transcode)](https://github.com/rdavid/transcode/blob/master/LICENSE.txt)
 
@@ -18,7 +19,7 @@ Version](https://badge.fury.io/rb/transcode.svg)](https://badge.fury.io/rb/trans
 * [License](#license)
 
 ## About
-Hi, I'm [David Rabkin](https://www.rabkin.co.il). I created this tool to
+Hi, I'm [David Rabkin](http://davi.drabk.in). I created this tool to
 enhance [Don Melton](http://donmelton.com/)'s [Video
 Transcoding](https://github.com/donmelton/video_transcoding/). It applies
 Video Trascoding to each video file in a directory.
@@ -60,5 +61,5 @@ It converts three files from source with certain audio and subtitle streams.
 Inspect first with `-s` option to see audio and subtitle streams.
 
 ## License
-Transcode is copyright [David Rabkin](http://www.rabkin.co.il/) and
+Transcode is copyright [David Rabkin](http://davi.drabk.in) and
 available under a [2-Claus BSD license](https://github.com/rdavid/transcode/blob/master/LICENSE).
