@@ -21,7 +21,7 @@ module Transcode
       ['-w', '--wid wid', 'Width of the table.', Integer, :wid]
     ].freeze
     EXT = %i[
-      avi flv m4v mkv mp4 mpg mpeg ts webm vob wmv
+      avi flv m4v mkv mp4 mpg mpeg mov ts webm vob wmv
     ].map(&:to_s).join(',').freeze
 
     def initialize
