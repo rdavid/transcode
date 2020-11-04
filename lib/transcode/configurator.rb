@@ -24,11 +24,19 @@ module Transcode
       avi flv m4v mkv mp4 mpg mpeg mov ts webm vob wmv
     ].map(&:to_s).join(',').freeze
 
+    def add(opt)
+      opt.on('-v', '--version', 'Show version.') do
+        puts "#{File.basename($PROGRAM_NAME)} #{VERSION} #{DATE}"
+        exit
+      end
+    end
+
     def initialize
       @options = {}
       OptionParser.new do |o|
         o.banner = "Usage: #{File.basename($PROGRAM_NAME)} [options]."
         DIC.each { |f, p, d, t, k| o.on(f, p, t, d) { |i| @options[k] = i } }
+        add(o)
       end.parse!
       find_dir
       find_fil

@@ -53,6 +53,7 @@ See Video Transcoding's [requirements](https://github.com/donmelton/video_transc
       -u, --aud aud                    Audio stream numbers.
       -t, --sub sub                    Subtitle stream numbers.
       -w, --wid wid                    Width of the table.
+      -v, --version                    Shows version.
 
 ### Example
     transcode -d <source> -o <destination> -u 1,3,1 -t 2,1,3
