@@ -4,6 +4,6 @@
 # Copyright 2020-present David Rabkin
 
 module Transcode
-  VERSION = '1.0.2'
-  DATE = '20201104'
+  VERSION = '1.0.3'
+  DATE = '2020-11-04'
 end

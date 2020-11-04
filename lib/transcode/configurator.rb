@@ -45,7 +45,7 @@ module Transcode
 
     def find_dir
       @options[:dir] = File.expand_path(dir.nil? ? Dir.pwd : dir)
-      @options[:out] = File.expand_path(out.nil? ? '~' : out)
+      @options[:out] = File.expand_path(out.nil? ? Dir.pwd : out)
     end
 
     def find_fil
