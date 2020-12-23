@@ -19,15 +19,15 @@ Version](https://badge.fury.io/rb/transcode.svg)](https://badge.fury.io/rb/trans
 * [License](#license)
 
 ## About
-Hi, I'm [David Rabkin](http://davi.drabk.in). I created this tool to
+Hi, I'm [David Rabkin](http://cv.rabkin.co.il). I created this tool to
 enhance [Don Melton](http://donmelton.com/)'s [Video
 Transcoding](https://github.com/donmelton/video_transcoding/). It applies
 Video Trascoding to each video file in a directory.
 
 ## Installation
 The tool is designed to work on macOS, GNU/Linux, Windows, Unix-like OS. It is
-packaged as a Gem and require Ruby version 2.6 or later.  See «[Installing
-Ruby](https://www.ruby-lang.org/en/documentation/installation/)» if you don't
+packaged as a Gem and require Ruby version 2.6 or later.  See “[Installing
+Ruby](https://www.ruby-lang.org/en/documentation/installation/)” if you don't
 have the proper version on your platform.
 
 Use this command to install:
@@ -62,5 +62,5 @@ It converts three files from source with certain audio and subtitle streams.
 Inspect first with `-s` option to see audio and subtitle streams.
 
 ## License
-Transcode is copyright [David Rabkin](http://davi.drabk.in) and
-available under a [2-Claus BSD license](https://github.com/rdavid/transcode/blob/master/LICENSE).
+Transcode is copyright [David Rabkin](http://cv.rabkin.co.il) and
+available under a [Zero-Claus BSD license](https://github.com/rdavid/transcode/blob/master/LICENSE).
