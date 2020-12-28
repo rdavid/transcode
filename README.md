@@ -11,7 +11,7 @@ Version](https://badge.fury.io/rb/transcode.svg)](https://badge.fury.io/rb/trans
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/5e21a1c1f8a3923584e3/maintainability)](https://codeclimate.com/github/rdavid/transcode/maintainability)
 [![Hits-of-Code](https://hitsofcode.com/github/rdavid/transcode)](https://hitsofcode.com/view/github/rdavid/transcode)
-[![License](https://img.shields.io/github/license/rdavid/transcode)](https://github.com/rdavid/transcode/blob/master/LICENSE.txt)
+[![License](https://img.shields.io/badge/license-0BSD-green)](https://github.com/rdavid/transcode/blob/master/LICENSE)
 
 * [About](#about)
 * [Installation](#installation)
