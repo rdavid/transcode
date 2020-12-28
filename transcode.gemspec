@@ -13,13 +13,13 @@ Gem::Specification.new do |s|
   s.description = <<-HERE
     Transcode is a wraper on Video Transcoding.
   HERE
-  s.license = 'BSD-2-Clause'
+  s.license = '0BSD'
   s.author = 'David Rabkin'
-  s.email = 'pub@rabkin.co.il'
+  s.email = 'david@rabkin.co.il'
   s.homepage = 'https://github.com/rdavid/transcode'
   s.files = Dir['{bin,lib}/**/*'] + Dir['[A-Z]*'] + ['transcode.gemspec']
   s.executables = ['transcode']
-  s.extra_rdoc_files = ['LICENSE.txt', 'README.md']
+  s.extra_rdoc_files = ['LICENSE', 'README.md']
   s.require_paths = ['lib']
   s.add_runtime_dependency 'pidfile', '0.3.0'
   s.add_runtime_dependency 'terminal-table', '1.8.0'
