@@ -9,6 +9,7 @@ module Transcode
   # Handles input parameters.
   class Configurator # rubocop:disable Metrics/ClassLength
     attr_reader :files
+
     DIC = [
       ['-a', '--act', 'Real encoding.', nil, :act],
       ['-s', '--sca', 'Scans files at the directory.', nil, :sca],
@@ -21,7 +22,7 @@ module Transcode
       ['-w', '--wid wid', 'Width of the table.', Integer, :wid]
     ].freeze
     EXT = %i[
-      avi flv m4v mkv mp4 mpg mpeg mov ts webm vob wmv
+      avi flv m2ts m4v mkv mp4 mpg mpeg mov ts webm vob wmv
     ].map(&:to_s).join(',').freeze
 
     def add(opt)
@@ -79,7 +80,7 @@ module Transcode
       raise "#{bad.join(',')}: Permission denied." unless bad.empty?
     end
 
-    def validate_tit # rubocop:disable Metrics/AbcSize
+    def validate_tit
       if tit.nil?
         @options[:tit] = Array.new(files.size, '0')
         return
