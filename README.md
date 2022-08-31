@@ -19,33 +19,35 @@ Ruby](https://www.ruby-lang.org/en/documentation/installation/)” if you don't
 have the proper version on your platform.
 
 Use this command to install:
-
-    gem install transcode
-
+```sh
+gem install transcode
+```
 ### Updating
 Use this command to update the package:
-
-    gem update transcode
-
+```sh
+gem update transcode
+```
 ### Requirements
 See Video Transcoding's [requirements](https://github.com/donmelton/video_transcoding/blob/master/README.md?ts=2#requirements).
 
-## Usage
-    transcode [options]
-      -a, --act                        Real encoding.
-      -s, --sca                        Scans files at the directory.
-      -m, --mp3                        Converts files to mp3.
-      -d, --dir dir                    Directory to transcode.
-      -i, --tit tit                    Specific title by number.
-      -o, --out out                    Directory to output.
-      -u, --aud aud                    Audio stream numbers.
-      -t, --sub sub                    Subtitle stream numbers.
-      -w, --wid wid                    Width of the table.
-      -v, --version                    Shows version.
-
+### Usage
+```sh
+transcode [options]
+	-a, --act                        Real encoding.
+	-s, --sca                        Scans files at the directory.
+	-m, --mp3                        Converts files to mp3.
+	-d, --dir dir                    Directory to transcode.
+	-i, --tit tit                    Specific title by number.
+	-o, --out out                    Directory to output.
+	-u, --aud aud                    Audio stream numbers.
+	-t, --sub sub                    Subtitle stream numbers.
+	-w, --wid wid                    Width of the table.
+	-v, --version                    Shows version.
+```
 ### Example
-    transcode -d <source> -o <destination> -u 1,3,1 -t 2,1,3
-
+```sh
+transcode -d <source> -o <destination> -u 1,3,1 -t 2,1,3
+```
 It converts three files from source with certain audio and subtitle streams.
 Inspect first with `-s` option to see audio and subtitle streams.
 
