@@ -1,4 +1,4 @@
-# Transcode [![Build Status](https://travis-ci.org/rdavid/transcode.svg)](https://travis-ci.org/rdavid/transcode) [![Build status](https://ci.appveyor.com/api/projects/status/yqxb43ltxrjj776a?svg=true)](https://ci.appveyor.com/project/rdavid/transcode) ![Ruby](https://github.com/rdavid/transcode/workflows/Ruby/badge.svg) [![Gem Version](https://badge.fury.io/rb/transcode.svg)](https://badge.fury.io/rb/transcode) [![Maintainability](https://api.codeclimate.com/v1/badges/5e21a1c1f8a3923584e3/maintainability)](https://codeclimate.com/github/rdavid/transcode/maintainability) [![Hits-of-Code](https://hitsofcode.com/github/rdavid/transcode)](https://hitsofcode.com/view/github/rdavid/transcode) [![License](https://img.shields.io/badge/license-0BSD-green)](https://github.com/rdavid/transcode/blob/master/LICENSE)
+# Transcode [![build](https://travis-ci.org/rdavid/transcode.svg)](https://travis-ci.org/rdavid/transcode) [![build](https://ci.appveyor.com/api/projects/status/yqxb43ltxrjj776a?svg=true)](https://ci.appveyor.com/project/rdavid/transcode) [![linters](https://github.com/rdavid/transcode/actions/workflows/lint.yml/badge.svg)](https://github.com/rdavid/transcode/actions/workflows/lint.yml) [![ruby](https://github.com/rdavid/transcode/actions/workflows/ruby.yml/badge.svg)](https://github.com/rdavid/transcode/actions/workflows/ruby.yml) [![gem version](https://badge.fury.io/rb/transcode.svg)](https://badge.fury.io/rb/transcode) [![maintainability](https://api.codeclimate.com/v1/badges/5e21a1c1f8a3923584e3/maintainability)](https://codeclimate.com/github/rdavid/transcode/maintainability) [![hits of code](https://hitsofcode.com/github/rdavid/transcode?branch=master&label=hits%20of%20code)](https://hitsofcode.com/view/github/rdavid/transcode) [![license](https://img.shields.io/github/license/rdavid/transcode?color=blue&labelColor=gray&logo=freebsd&logoColor=lightgray&style=flat)](https://github.com/rdavid/transcode/blob/master/LICENSE)
 Tool to transcode batch of video files.
 
 * [About](#about)
@@ -52,5 +52,5 @@ It converts three files from source with certain audio and subtitle streams.
 Inspect first with `-s` option to see audio and subtitle streams.
 
 ## License
-Transcode is copyright [David Rabkin](http://cv.rabkin.co.il) and
+`transcode` is copyright [David Rabkin](http://cv.rabkin.co.il) and
 available under a [Zero-Claus BSD license](https://github.com/rdavid/transcode/blob/master/LICENSE).

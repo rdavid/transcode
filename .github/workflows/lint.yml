@@ -1,0 +1,21 @@
+---
+name: linters
+'on':
+  push:
+    branches:
+      - master
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Lint Code Base
+        uses: docker://github/super-linter:v2.1.1
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_ANSIBLE: false
+      - name: Run YamlLint
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: .github/workflows/*.yml
