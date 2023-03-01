@@ -1,6 +1,6 @@
 ---
 name: ruby
-'on': [push]
+'on': push
 jobs:
   test:
     runs-on: ubuntu-latest
