@@ -6,6 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: nosborn/github-action-markdown-cli@v3.2.0
+        with:
+          files: ./*.md
       - uses: docker://github/super-linter:v2.1.1
         env:
           VALIDATE_ALL_CODEBASE: true
