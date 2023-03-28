@@ -10,7 +10,7 @@ gem 'minitest', '5.18.0'
 gem 'pidfile', '0.3.0'
 gem 'rake', '13.0.6'
 gem 'terminal-table', '3.0.2'
-gem 'rubocop', '1.42.0'
+gem 'rubocop', '1.48.1'
 gem 'video_transcoding', '0.25.3'
 
 #  gemspec

@@ -26,5 +26,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'video_transcoding', '0.25.3'
   s.add_development_dependency 'minitest', '5.18.0'
   s.add_development_dependency 'rake', '13.0.6'
-  s.add_development_dependency 'rubocop', '1.42.0'
+  s.add_development_dependency 'rubocop', '1.48.1'
 end
