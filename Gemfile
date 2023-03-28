@@ -6,10 +6,10 @@
 source 'https://rubygems.org'
 ruby '~>2.6'
 
-gem 'minitest', '5.11.3'
+gem 'minitest', '5.18.0'
 gem 'pidfile', '0.3.0'
-gem 'rake', '13.0.1'
-gem 'rubocop', '0.76.0'
+gem 'rake', '13.0.6'
+gem 'rubocop', '1.42.0'
 gem 'terminal-table', '1.8.0'
 gem 'video_transcoding', '0.25.3'
 
