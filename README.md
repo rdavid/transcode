@@ -1,6 +1,5 @@
 # Transcode
 
-[![build](https://travis-ci.org/rdavid/transcode.svg)](https://travis-ci.org/rdavid/transcode)
 [![build](https://ci.appveyor.com/api/projects/status/yqxb43ltxrjj776a?svg=true)](https://ci.appveyor.com/project/rdavid/transcode)
 [![linters](https://github.com/rdavid/transcode/actions/workflows/lint.yml/badge.svg)](https://github.com/rdavid/transcode/actions/workflows/lint.yml)
 [![ruby](https://github.com/rdavid/transcode/actions/workflows/ruby.yml/badge.svg)](https://github.com/rdavid/transcode/actions/workflows/ruby.yml)
