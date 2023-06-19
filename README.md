@@ -64,11 +64,15 @@ transcode [options]
 ### Example
 
 ```sh
-transcode -d <source> -o <destination> -u 1,3,1 -t 2,1,3
+transcode \
+  --aud 1,3,1 \
+  --dir [source] \
+  --out [destination] \
+  --sub 2,1,3
 ```
 
 It converts three files from source with certain audio and subtitle streams.
-Inspect first with `-s` option to see audio and subtitle streams.
+Inspect first with `--sca` option to see audio and subtitle streams.
 
 ## License
 
