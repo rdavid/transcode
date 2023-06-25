@@ -64,7 +64,7 @@ module Transcode
       validate_tit
       validate_val(aud, :aud)
       validate_val(sub, :sub)
-      raise "Width of the table should exeeds 14 symbols: #{wid}." if wid < 15
+      raise "Width of the table should exceeds 14 symbols: #{wid}." if wid < 15
     end
 
     def validate_dir(dir, isw)
