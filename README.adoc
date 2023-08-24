@@ -23,9 +23,9 @@ toc::[]
 
 == About
 
-`transcode` is a tool to transcode multiple video files.
-It enhances {url-melton}[Don Melton]'s {url-video}[Video Transcoding].
-It applies Video Transcoding to each video file in a directory.
+Transcode is a tool designed for transcoding multiple video files.
+It builds upon {url-melton}[Don Melton's] Video Transcoding and applies
+this technique to each video file within a directory.
 
 == Installation
 
