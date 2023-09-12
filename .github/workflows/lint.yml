@@ -5,7 +5,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: docker://github/super-linter:v2.1.1
         env:
           VALIDATE_ALL_CODEBASE: true
