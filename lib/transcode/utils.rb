@@ -56,7 +56,7 @@ end
 
 # Adds natural sort method. This converts something like "Filename 10" into a
 # simple array with floats in place of numbers [ "Filename", 10.0 ]. See:
-#   https://stackoverflow.com/questions/4078906/is-there-a-natural-sort-by-method-for-ruby
+#  https://stackoverflow.com/q/4078906
 class String
   def naturalized
     scan(/[^\d\.]+|[\d\.]+/).collect { |f| f.match(/\d+(\.\d+)?/) ? f.to_f : f }
