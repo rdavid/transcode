@@ -6,7 +6,7 @@
 source 'https://rubygems.org'
 ruby '>2.6'
 
-gem 'minitest', '5.21.1'
+gem 'minitest', '5.21.2'
 gem 'pidfile', '0.3.0'
 gem 'rake', '13.1.0'
 gem 'rubocop', '1.50.2'
