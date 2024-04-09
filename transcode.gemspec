@@ -25,6 +25,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'terminal-table', '3.0.2'
   s.add_runtime_dependency 'video_transcoding', '0.25.3'
   s.add_development_dependency 'minitest', '5.22.3'
-  s.add_development_dependency 'rake', '13.2.0'
+  s.add_development_dependency 'rake', '13.2.1'
   s.add_development_dependency 'rubocop', '1.50.2'
 end
