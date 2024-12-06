@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: sudo apt-get install asciidoctor
       - uses: docker://github/super-linter:v2.1.1
         env:
           VALIDATE_ALL_CODEBASE: true
