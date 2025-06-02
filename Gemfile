@@ -8,7 +8,7 @@ ruby '>2.6'
 
 gem 'minitest', '5.25.4'
 gem 'pidfile', '0.3.0'
-gem 'rake', '13.2.1'
+gem 'rake', '13.3.0'
 gem 'rubocop', '1.50.2'
 gem 'terminal-table', '4.0.0'
 gem 'video_transcoding', '0.25.3'
