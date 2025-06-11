@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 # vi:ts=2 sw=2 tw=79 et lbr wrap
-# Copyright 2018-2023 by David Rabkin
+# SPDX-FileCopyrightText: 2018-2025 David Rabkin
+# SPDX-License-Identifier: 0BSD
 
 require 'terminal-table'
 require_relative 'utils'
