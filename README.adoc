@@ -15,12 +15,12 @@
 :url-hoc: https://hitsofcode.com/view/github/rdavid/transcode?branch=master
 :url-license: https://github.com/rdavid/transcode/blob/master/LICENSES/0BSD.txt
 :url-maintainability: https://codeclimate.com/github/rdavid/transcode/maintainability
-:url-melton: http://donmelton.com
+:url-melton: https://lisamelton.net
 :url-reuse: https://github.com/fsfe/reuse-action
 :url-ruby: https://www.ruby-lang.org/en/documentation/installation
 :url-ruby-ci: https://github.com/rdavid/transcode/actions/workflows/ruby.yml
 :url-test: https://github.com/rdavid/transcode/actions/workflows/test.yml
-:url-video: https://github.com/donmelton/video_transcoding
+:url-video: https://github.com/lisamelton/video_transcoding
 :url-vale: https://vale.sh
 :url-yamllint: https://github.com/adrienverge/yamllint
 
@@ -39,7 +39,7 @@ toc::[]
 == About
 
 Transcode is a tool designed for transcoding multiple video files.
-It builds upon {url-melton}[Don Melton's] Video Transcoding and applies
+It builds upon {url-melton}[Lisa Melton's] Video Transcoding and applies
 this technique to each video file within a directory.
 
 == Installation
@@ -67,7 +67,7 @@ gem update transcode
 
 == Requirements
 
-See Video Transcoding's https://github.com/donmelton/video_transcoding/blob/master/README.md?ts=2#requirements[requirements].
+See Video Transcoding's https://github.com/lisamelton/video_transcoding/blob/master/README.md?ts=2#requirements[requirements].
 
 == Usage
 
