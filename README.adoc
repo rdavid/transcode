@@ -17,6 +17,7 @@
 :url-maintainability: https://codeclimate.com/github/rdavid/transcode/maintainability
 :url-melton: https://lisamelton.net
 :url-reuse: https://github.com/fsfe/reuse-action
+:url-requirements: https://github.com/lisamelton/video_transcoding/blob/master/README.md?ts=2#requirements
 :url-ruby: https://www.ruby-lang.org/en/documentation/installation
 :url-ruby-ci: https://github.com/rdavid/transcode/actions/workflows/ruby.yml
 :url-test: https://github.com/rdavid/transcode/actions/workflows/test.yml
@@ -46,8 +47,8 @@ this technique to each video file within a directory.
 
 The tool is designed to work on macOS, GNU/Linux, Windows, Unix-like OS.
 It is packaged as a Gem and require Ruby version 2.6 or later.
-See "`https://www.ruby-lang.org/en/documentation/installation/[Installing Ruby]`"
-if you don't have the proper version on your platform.
+See {url-ruby}[Installing Ruby] if you don't have the proper version on your
+platform.
 
 Use this command to install:
 
@@ -67,7 +68,7 @@ gem update transcode
 
 == Requirements
 
-See Video Transcoding's https://github.com/lisamelton/video_transcoding/blob/master/README.md?ts=2#requirements[requirements].
+See Video Transcoding's {url-requirements}[requirements].
 
 == Usage
 
