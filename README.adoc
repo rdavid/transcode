@@ -6,7 +6,6 @@
 :img-gem: https://badge.fury.io/rb/transcode.svg
 :img-hoc: https://hitsofcode.com/github/rdavid/transcode?branch=master&label=hits%20of%20code
 :img-license: https://img.shields.io/github/license/rdavid/transcode?color=blue&labelColor=gray&logo=freebsd&logoColor=lightgray&style=flat
-:img-maintainability: https://api.codeclimate.com/v1/badges/5e21a1c1f8a3923584e3/maintainability
 :img-ruby: https://github.com/rdavid/transcode/actions/workflows/ruby.yml/badge.svg
 :img-test: https://github.com/rdavid/transcode/actions/workflows/test.yml/badge.svg
 :url-build: https://ci.appveyor.com/project/rdavid/transcode
@@ -14,7 +13,6 @@
 :url-gem: https://badge.fury.io/rb/transcode
 :url-hoc: https://hitsofcode.com/view/github/rdavid/transcode?branch=master
 :url-license: https://github.com/rdavid/transcode/blob/master/LICENSES/0BSD.txt
-:url-maintainability: https://codeclimate.com/github/rdavid/transcode/maintainability
 :url-melton: https://lisamelton.net
 :url-reuse: https://github.com/fsfe/reuse-action
 :url-requirements: https://github.com/lisamelton/video_transcoding/blob/master/README.md?ts=2#requirements
@@ -31,7 +29,6 @@ image:{img-build}[build,link={url-build}]
 image:{img-test}[test,link={url-test}]
 image:{img-ruby}[ruby,link={url-ruby-ci}]
 image:{img-gem}[gem version,link={url-gem}]
-image:{img-maintainability}[maintainability,link={url-maintainability}]
 image:{img-hoc}[hits of code,link={url-hoc}]
 image:{img-license}[license,link={url-license}]
 
