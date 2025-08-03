@@ -26,7 +26,7 @@
 = Transcode
 
 image:{img-build}[build,link={url-build}]
-image:{img-test}[test,link={url-test}]
+//image:{img-test}[test,link={url-test}]
 image:{img-ruby}[ruby,link={url-ruby-ci}]
 image:{img-gem}[gem version,link={url-gem}]
 image:{img-hoc}[hits of code,link={url-hoc}]
