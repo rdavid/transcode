@@ -6,28 +6,25 @@
 :img-gem: https://badge.fury.io/rb/transcode.svg
 :img-hoc: https://hitsofcode.com/github/rdavid/transcode?branch=master&label=hits%20of%20code
 :img-license: https://img.shields.io/github/license/rdavid/transcode?color=blue&labelColor=gray&logo=freebsd&logoColor=lightgray&style=flat
-:img-ruby: https://github.com/rdavid/transcode/actions/workflows/ruby.yml/badge.svg
-:img-test: https://github.com/rdavid/transcode/actions/workflows/test.yml/badge.svg
+:img-rake: https://github.com/rdavid/transcode/actions/workflows/rake.yml/badge.svg
 :url-build: https://ci.appveyor.com/project/rdavid/transcode
 :url-cv: http://cv.rabkin.co.il
 :url-gem: https://badge.fury.io/rb/transcode
 :url-hoc: https://hitsofcode.com/view/github/rdavid/transcode?branch=master
 :url-license: https://github.com/rdavid/transcode/blob/master/LICENSES/0BSD.txt
 :url-melton: https://lisamelton.net
+:url-rake: https://github.com/rdavid/transcode/actions/workflows/rake.yml
 :url-reuse: https://github.com/fsfe/reuse-action
 :url-requirements: https://github.com/lisamelton/video_transcoding/blob/master/README.md?ts=2#requirements
 :url-ruby: https://www.ruby-lang.org/en/documentation/installation
-:url-ruby-ci: https://github.com/rdavid/transcode/actions/workflows/ruby.yml
-:url-test: https://github.com/rdavid/transcode/actions/workflows/test.yml
 :url-video: https://github.com/lisamelton/video_transcoding
 :url-vale: https://vale.sh
 :url-yamllint: https://github.com/adrienverge/yamllint
 
 = Transcode
 
+image:{img-rake}[rake,link={url-rake}]
 image:{img-build}[build,link={url-build}]
-//image:{img-test}[test,link={url-test}]
-image:{img-ruby}[ruby,link={url-ruby-ci}]
 image:{img-gem}[gem version,link={url-gem}]
 image:{img-hoc}[hits of code,link={url-hoc}]
 image:{img-license}[license,link={url-license}]
