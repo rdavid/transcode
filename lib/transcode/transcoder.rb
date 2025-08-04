@@ -63,7 +63,7 @@ module Transcode
       "transcode-video --scan #{file.shellescape}"
     end
 
-    def do # rubocop:disable Metrics/AbcSize
+    def do
       if @cfg.mp3?
         @cfg.files.each { |f| @rep.add(f, @cfg.act? ? run(mp3_cmd(f)) : true) }
       elsif @cfg.sca?

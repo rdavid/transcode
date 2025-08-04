@@ -64,7 +64,7 @@ module Transcode
     def stat
       out = ''
       @sta.each do |k, v|
-        out += ' ' + v.to_s + ' ' + k.to_s + ',' if v.positive?
+        out += " #{v} #{k}," if v.positive?
       end
       out.chop
     end

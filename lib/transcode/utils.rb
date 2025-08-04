@@ -9,13 +9,14 @@ class Utils
   @sep = '~'
   class << self
     attr_accessor :sep
+
     def trim(src, lim)
       return '' if src.nil? || lim.nil?
       return src if src.length <= lim
 
       beg = fin = (lim - @sep.length) / 2
       beg -= 1 if lim.odd?
-      src[0..beg] + @sep + src[-fin..-1]
+      src[0..beg] + @sep + src[-fin..]
     end
   end
 end
@@ -60,6 +61,6 @@ end
 #  https://stackoverflow.com/q/4078906
 class String
   def naturalized
-    scan(/[^\d\.]+|[\d\.]+/).collect { |f| f.match(/\d+(\.\d+)?/) ? f.to_f : f }
+    scan(/[^\d.]+|[\d.]+/).collect { |f| f.match(/\d+(\.\d+)?/) ? f.to_f : f }
   end
 end
