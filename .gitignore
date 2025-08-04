@@ -10,5 +10,4 @@
 .github/styles/write-good
 .idea/
 coverage/
-Gemfile.lock
 rdoc/

@@ -43,7 +43,7 @@ this technique to each video file within a directory.
 == Installation
 
 The tool is designed to work on macOS, GNU/Linux, Windows, Unix-like OS.
-It is packaged as a Gem and require Ruby version 2.6 or later.
+It is packaged as a Gem and require Ruby version 3.2 or later.
 See {url-ruby}[Installing Ruby] if you don't have the proper version on your
 platform.
 

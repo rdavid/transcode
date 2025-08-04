@@ -6,6 +6,7 @@ path = [
 	".github/styles/**",
 	".gitignore",
 	".vale.ini",
+	"Gemfile.lock",
 	"README.adoc",
 ]
 precedence = "override"
