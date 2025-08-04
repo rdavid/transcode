@@ -6,7 +6,6 @@
 
 source 'https://rubygems.org'
 gem 'minitest'
-gem 'pidfile'
 gem 'rake'
 gem 'rubocop'
 gem 'terminal-table'
