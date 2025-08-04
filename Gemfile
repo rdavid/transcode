@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: 0BSD
 
 source 'https://rubygems.org'
+gem 'ellipsized'
 gem 'minitest'
 gem 'rake'
 gem 'rubocop'

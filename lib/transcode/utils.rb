@@ -4,6 +4,8 @@
 # SPDX-FileCopyrightText: 2018-2025 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
+require 'ellipsized'
+
 # All methods are static.
 class Utils
   @sep = '~'
@@ -11,12 +13,7 @@ class Utils
     attr_accessor :sep
 
     def trim(src, lim)
-      return '' if src.nil? || lim.nil?
-      return src if src.length <= lim
-
-      beg = fin = (lim - @sep.length) / 2
-      beg -= 1 if lim.odd?
-      src[0..beg] + @sep + src[-fin..]
+      src.ellipsized(lim, @sep, :center)
     end
   end
 end
