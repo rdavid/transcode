@@ -13,10 +13,16 @@ jobs:
   rubocop:
     timeout-minutes: 15
     runs-on: ubuntu-24.04
+    env:
+      BUNDLE_ONLY: rubocop
     steps:
       - uses: actions/checkout@v5
-      - uses: andrewmcodes/rubocop-linter-action@v3.3.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ruby/setup-ruby@v1
         with:
-          exit_on_failure: true
+          ruby-version: 3.2
+          bundler-cache: true
+      - uses: reviewdog/action-rubocop@v2
+        with:
+          reporter: github-pr-review  # Default is github-pr-check
+          skip_install: true
+          use_bundler: true

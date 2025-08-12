@@ -8,6 +8,8 @@ source 'https://rubygems.org'
 gem 'ellipsized'
 gem 'minitest'
 gem 'rake'
-gem 'rubocop'
 gem 'terminal-table'
 gem 'video_transcoding'
+group :rubocop do
+  gem 'rubocop'
+end
