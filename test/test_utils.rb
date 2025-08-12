@@ -15,13 +15,16 @@ class TestUtils < Minitest::Test
   def test_timer
     assert_equal(Timer.less_sec, @tim.read)
     sleep(1)
+
     assert_equal('1 second', @tim.read)
     sleep(1)
+
     assert_equal('2 seconds', @tim.read)
   end
 
   def test_trim
     s = Utils.sep
+
     assert_equal("ni#{s}bo", Utils.trim('ninesymbo', 5))
     assert_equal("te#{s}ls", Utils.trim('tensymbols', 5))
     assert_equal("nin#{s}bo", Utils.trim('ninesymbo', 6))

@@ -28,8 +28,8 @@ module Transcode
     end
 
     def m4v_cmd(file, aud, sub, tit)
-      c = 'transcode-video --m4v --no-log --preset veryslow'\
-          " --output #{@cfg.out}"
+      c = 'transcode-video --m4v --no-log --preset veryslow ' \
+          "--output #{@cfg.out}"
       unless tit == '0'
         c += "/#{File.basename(file.shellescape)}-#{tit}.m4v"
         c += " --title #{tit}"
@@ -55,7 +55,7 @@ module Transcode
 
     def mp3_cmd(file)
       file = file.shellescape
-      "ffmpeg -i #{file} -vn -ar 44100 -ac 2 -ab 192k -f mp3 "\
+      "ffmpeg -i #{file} -vn -ar 44100 -ac 2 -ab 192k -f mp3 " \
         "#{@cfg.out}/#{File.basename(file, '.*')}.mp3"
     end
 

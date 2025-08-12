@@ -6,6 +6,7 @@
 
 task default: %w[test]
 
+desc 'Run the test suite'
 task :test do
   ruby 'test/test_utils.rb'
 end

@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2025 David Rabkin
+# SPDX-License-Identifier: 0BSD
+---
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+  DisplayCopNames: true
+  TargetRubyVersion: 3.2
+  SuggestExtensions: false
+  NewCops: enable
+plugins:
+  - rubocop-minitest
+  - rubocop-performance
+  - rubocop-rake
+Layout/EndOfLine:
+  EnforcedStyle: lf
+Naming/PredicateMethod:
+  Enabled: false

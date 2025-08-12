@@ -44,11 +44,11 @@ class Timer
     return '' if sec.nil?
     return Timer.less_sec if sec < 1
 
-    DIC.map do |cnt, nms, nm1|
+    DIC.filter_map do |cnt, nms, nm1|
       next if sec <= 0
 
       sec, n = sec.divmod(cnt)
-      "#{n.to_i} #{n.to_i != 1 ? nms : nm1}"
+      "#{n.to_i} #{n.to_i == 1 ? nm1 : nms}"
     end.compact.reverse.join(' ')
   end
 end
@@ -58,6 +58,6 @@ end
 #  https://stackoverflow.com/q/4078906
 class String
   def naturalized
-    scan(/[^\d.]+|[\d.]+/).collect { |f| f.match(/\d+(\.\d+)?/) ? f.to_f : f }
+    scan(/[^\d.]+|[\d.]+/).map { |f| f.match?(/\d+(\.\d+)?/) ? f.to_f : f }
   end
 end

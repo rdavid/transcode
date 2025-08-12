@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>=3.2'
   s.name = 'transcode'
   s.version = Transcode::VERSION
-  s.date = Transcode::DATE
   s.summary = 'Tools to transcode batch of video files'
   s.description = <<-HERE
     Transcode is a wrapper on Video Transcoding.
