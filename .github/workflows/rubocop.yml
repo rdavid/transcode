@@ -2,13 +2,7 @@
 # SPDX-License-Identifier: 0BSD
 ---
 name: rubocop
-'on':
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+'on': [pull_request, push]
 jobs:
   rubocop:
     timeout-minutes: 15
