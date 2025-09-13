@@ -5,8 +5,8 @@ name: rubocop
 'on': [pull_request, push]
 jobs:
   rubocop:
-    timeout-minutes: 15
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     env:
       BUNDLE_ONLY: rubocop
     steps:
