@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.author = 'David Rabkin'
   s.email = 'david@rabkin.co.il'
   s.homepage = 'https://github.com/rdavid/transcode'
-  s.files = `git ls-files`.split($RS)
+  s.files = `git ls-files | grep -E -v '^(test/|\\.)'`.split($RS)
   s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.extra_rdoc_files = ['LICENSE', 'README.adoc']
   s.metadata['rubygems_mfa_required'] = 'true'
