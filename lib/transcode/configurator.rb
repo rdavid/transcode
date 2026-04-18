@@ -12,14 +12,14 @@ module Transcode
     attr_reader :files
 
     DIC = [
-      ['-a', '--act', 'Real encoding.', nil, :act],
-      ['-s', '--sca', 'Scans files at the directory.', nil, :sca],
-      ['-m', '--mp3', 'Converts files to mp3.', nil, :mp3],
-      ['-d', '--dir dir', 'Directory to transcode.', String, :dir],
-      ['-i', '--tit tit', 'Specific title by number.', Array, :tit],
-      ['-o', '--out out', 'Directory to output.', String, :out],
+      ['-a', '--act', 'Perform actual encoding.', nil, :act],
       ['-u', '--aud aud', 'Audio stream numbers.', Array, :aud],
+      ['-d', '--dir dir', 'Source directory to transcode.', String, :dir],
+      ['-m', '--mp3', 'Convert files to MP3.', nil, :mp3],
+      ['-o', '--out out', 'Output directory.', String, :out],
+      ['-s', '--sca', 'Scan files in the directory.', nil, :sca],
       ['-t', '--sub sub', 'Subtitle stream numbers.', Array, :sub],
+      ['-i', '--tit tit', 'Specific title number.', Array, :tit],
       ['-w', '--wid wid', 'Width of the table.', Integer, :wid]
     ].freeze
     EXT = %i[
