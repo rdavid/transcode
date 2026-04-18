@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 # vi:ts=2 sw=2 tw=79 et lbr wrap
-# SPDX-FileCopyrightText: 2018-2025 David Rabkin
+# SPDX-FileCopyrightText: 2018-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
 require 'ellipsized'
 
-# All methods are static.
+# Each method is static.
 class Utils
   @sep = '~'
   class << self
@@ -18,7 +18,7 @@ class Utils
   end
 end
 
-# Returns string with humanized time interval.
+# Returns a string with a humanized time interval.
 class Timer
   @less_sec = 'less than a second'
   class << self
@@ -53,8 +53,9 @@ class Timer
   end
 end
 
-# Adds natural sort method. This converts something like "Filename 10" into a
-# simple array with floats in place of numbers [ "Filename", 10.0 ]. See:
+# Adds a natural sort method. This converts something like "Filename 10" into
+# a simple array with floats in place of numbers [ "Filename", 10.0 ]. It
+# references:
 #  https://stackoverflow.com/q/4078906
 class String
   def naturalized
