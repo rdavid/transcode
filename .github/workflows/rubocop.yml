@@ -4,8 +4,18 @@
 name: rubocop
 'on':
   pull_request:
+    paths: &paths
+      - '**/*.rb'
+      - bin/**
+      - .rubocop.yml
+      - Gemfile
+      - Gemfile.lock
+      - Rakefile
+      - '*.gemspec'
+      - .github/workflows/rubocop.yml
   push:
     branches: [master]
+    paths: *paths
 permissions:
   contents: read
   pull-requests: write

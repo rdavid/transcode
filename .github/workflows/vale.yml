@@ -4,8 +4,15 @@
 name: vale
 'on':
   pull_request:
+    paths: &paths
+      - '**/*.md'
+      - '**/*.adoc'
+      - '**/README*'
+      - .github/styles/**
+      - .github/workflows/vale.yml
   push:
     branches: [master]
+    paths: *paths
 permissions:
   contents: read
   pull-requests: write

@@ -4,8 +4,13 @@
 name: yamllint
 'on':
   pull_request:
+    paths: &paths
+      - '**/*.yml'
+      - '**/*.yaml'
+      - .github/workflows/yamllint.yml
   push:
     branches: [master]
+    paths: *paths
 permissions:
   contents: read
 concurrency:

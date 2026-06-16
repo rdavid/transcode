@@ -4,8 +4,17 @@
 name: rake
 'on':
   pull_request:
+    paths: &paths
+      - '**/*.rb'
+      - bin/**
+      - Gemfile
+      - Gemfile.lock
+      - Rakefile
+      - '*.gemspec'
+      - .github/workflows/rake.yml
   push:
     branches: [master]
+    paths: *paths
 permissions:
   contents: read
 concurrency:
