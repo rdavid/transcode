@@ -1,15 +1,26 @@
-# SPDX-FileCopyrightText: 2025 David Rabkin
+# SPDX-FileCopyrightText: 2025-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 ---
 name: vale
-'on': [pull_request, push]
+'on':
+  pull_request:
+  push:
+    branches: [master]
+permissions:
+  contents: read
+  pull-requests: write
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   vale:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
-      - run: sudo apt-get install asciidoctor
-      - uses: errata-ai/vale-action@reviewdog
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends asciidoctor
+      - uses: errata-ai/vale-action@v2.1.1
         with:
           fail_on_error: true
