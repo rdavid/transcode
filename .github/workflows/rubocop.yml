@@ -30,7 +30,7 @@ jobs:
       BUNDLE_ONLY: rubocop
     steps:
       - uses: actions/checkout@v7.0.0
-      - uses: ruby/setup-ruby@v1.313.0
+      - uses: ruby/setup-ruby@v1.314.0
         with:
           ruby-version: 3.2
           bundler-cache: true
