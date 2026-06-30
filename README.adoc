@@ -10,7 +10,7 @@
 :url-gem: https://badge.fury.io/rb/transcode
 :url-hoc: https://hitsofcode.com/view/github/rdavid/transcode?branch=master
 :url-license: https://github.com/rdavid/transcode/blob/master/LICENSES/0BSD.txt
-:url-melton: https://lisamelton.net
+:url-melton: https://github.com/lisamelton/video_transcoding
 :url-rake: https://github.com/rdavid/transcode/actions/workflows/rake.yml
 :url-reuse: https://github.com/fsfe/reuse-action
 :url-requirements: https://github.com/lisamelton/video_transcoding/blob/master/README.md?ts=2#requirements
@@ -30,9 +30,22 @@ toc::[]
 
 == About
 
-Transcode is a command-line tool for transcoding multiple video files.
-It builds on {url-melton}[Lisa Melton's] Video Transcoding and applies the
-same workflow to each video file in a directory.
+Transcode is a command-line tool that converts whole directories of video
+files in one run.
+It wraps {url-melton}[Lisa Melton's] {url-video}[Video Transcoding] and
+applies the same workflow to every video in a directory, so a folder of
+clips takes a single command instead of one invocation per file.
+
+Transcode can:
+
+* Convert an entire directory to `.m4v` in a single run.
+* Select the main audio and burned-in subtitle stream for each file.
+* Extract audio to `.mp3`.
+* Scan files to list their available audio and subtitle streams.
+* Print a summary table of the results.
+
+It recognizes these input formats: `avi`, `flv`, `m2ts`, `m4v`, `mkv`,
+`mp4`, `mpg`, `mpeg`, `mov`, `ts`, `webm`, `vob`, and `wmv`.
 
 == Installation
 
@@ -79,20 +92,46 @@ transcode [options]
   -w, --wid wid  Width of the table.
 ----
 
+Transcode performs a dry run by default.
+It prints the commands it would run and a summary table without changing any
+files.
+Pass `--act` to perform the encoding.
+
+Without `--dir` and `--out`, Transcode reads from and writes to the current
+directory.
+The `--aud` and `--sub` options take comma-separated stream numbers, either
+one value applied to every file or one value per file.
+
 == Example
+
+Scan the source directory to inspect the available audio and subtitle
+streams:
+
+[,sh]
+----
+transcode --sca --dir [source]
+----
+
+Transcode three files from `[source]` to `[destination]` with the selected
+audio and subtitle streams.
+Add `--act` once the plan looks right:
 
 [,sh]
 ----
 transcode \
+  --act \
   --aud 1,3,1 \
   --dir [source] \
   --out [destination] \
   --sub 2,1,3
 ----
 
-This command transcodes three files from `[source]` to `[destination]` with
-the selected audio and subtitle streams.
-Run `--sca` first to inspect available audio and subtitle streams.
+Extract the audio of every file in the current directory to `.mp3`:
+
+[,sh]
+----
+transcode --mp3 --act
+----
 
 == License
 
