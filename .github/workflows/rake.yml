@@ -41,6 +41,7 @@ jobs:
         include:
           - os: ubuntu-24.04
             ruby: head
+            bundler: default
     name: Rake on ${{ matrix.os }} / Ruby ${{ matrix.ruby }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
@@ -52,5 +53,6 @@ jobs:
       - uses: ruby/setup-ruby@v1.318.0
         with:
           ruby-version: ${{ matrix.ruby }}
+          bundler: ${{ matrix.bundler || 'Gemfile.lock' }}
           bundler-cache: true
       - run: bundle exec rake
