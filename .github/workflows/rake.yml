@@ -26,11 +26,11 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - macos-14
           - macos-15
           - macos-15-intel
-          - ubuntu-22.04
+          - macos-26
           - ubuntu-24.04
+          - ubuntu-24.04-arm
           - windows-2022
           - windows-2025
         ruby:
@@ -42,7 +42,9 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7.0.0
-      - uses: ruby/setup-ruby@v1.316.0
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@v1.318.0
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
