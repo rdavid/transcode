@@ -65,19 +65,19 @@ module Transcode
       validate_tit
       validate_val(aud, :aud)
       validate_val(sub, :sub)
-      raise "Width of the table should exceeds 14 symbols: #{wid}." if wid < 15
+      raise "Width of the table must exceed 14 characters: #{wid}." if wid < 15
     end
 
     def validate_dir(dir, isw)
       raise "#{dir}: No such directory." unless File.directory?(dir)
 
       err = isw ? File.writable?(dir) : File.readable?(dir)
-      raise "#{out}: Permission denied." unless err
+      raise "#{dir}: Permission denied." unless err
     end
 
     def validate_fil
       bad = files.reject { |f| File.readable?(f) }
-      raise "#{dir} doesn't have #{EXT} files or directories." if files.empty?
+      raise "#{dir} has no #{EXT} files or directories." if files.empty?
       raise "#{bad.join(',')}: Permission denied." unless bad.empty?
     end
 
@@ -101,7 +101,7 @@ module Transcode
       if s == 1
         @options[tag] = Array.new(f, val.first)
       else
-        raise "#{tag} and files do not suit #{s} != #{f}." unless s == f
+        raise "#{tag} count #{s} doesn't match file count #{f}." unless s == f
       end
     end
 
@@ -137,10 +137,10 @@ module Transcode
       @options[:sub]
     end
 
+    # Returns the table width, falling back to the terminal width when the
+    # option is not set.
     def wid
       if @options[:wid].nil?
-
-        # Reads current terminal width.
         wid = `tput cols`
         wid.to_s.empty? ? 79 : wid.to_i
       else

@@ -17,7 +17,8 @@ module Transcode
       @rep = Reporter.new(@cfg.act?, "#{@cfg.dir} -> #{@cfg.out}", @cfg.wid)
     end
 
-    # Runs command and prints output instantly. Returns true on success.
+    # Runs a command and prints its output as it arrives. Returns true on
+    # success.
     def run(cmd)
       cmd += ' 2>&1'
       puts "Run: #{cmd}."

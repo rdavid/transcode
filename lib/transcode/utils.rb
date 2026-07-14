@@ -6,7 +6,7 @@
 
 require 'ellipsized'
 
-# Each method is static.
+# Provides string helpers as class methods.
 class Utils
   @sep = '~'
   class << self
@@ -18,7 +18,7 @@ class Utils
   end
 end
 
-# Returns a string with a humanized time interval.
+# Measures elapsed time and reports it as a humanized string.
 class Timer
   @less_sec = 'less than a second'
   class << self
@@ -53,10 +53,9 @@ class Timer
   end
 end
 
-# Adds a natural sort method. This converts something like "Filename 10" into
-# a simple array with floats in place of numbers [ "Filename", 10.0 ]. It
-# references:
-#  https://stackoverflow.com/q/4078906
+# Adds a natural sort method. It converts a string such as "Filename 10"
+# into an array with floats in place of numbers, ["Filename", 10.0], as
+# suggested in https://stackoverflow.com/q/4078906.
 class String
   def naturalized
     scan(/[^\d.]+|[\d.]+/).map { |f| f.match?(/\d+(\.\d+)?/) ? f.to_f : f }

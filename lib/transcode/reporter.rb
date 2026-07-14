@@ -8,7 +8,7 @@ require 'terminal-table'
 require_relative 'utils'
 
 module Transcode
-  # Formats and prints output data.
+  # Formats and prints the summary table.
   class Reporter
     def initialize(act, tit, wid)
       @act = act
