@@ -1,3 +1,11 @@
+PATH
+  remote: .
+  specs:
+    transcode (1.0.5)
+      ellipsized (~> 0.3)
+      terminal-table (~> 4.0)
+      video_transcoding (~> 0.25)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -57,15 +65,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ellipsized
   minitest
   rake
   rubocop
   rubocop-minitest
   rubocop-performance
   rubocop-rake
-  terminal-table
-  video_transcoding
+  transcode!
 
 BUNDLED WITH
    2.7.1

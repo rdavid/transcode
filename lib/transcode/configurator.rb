@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: 0BSD
 
 require 'optparse'
-require_relative 'utils'
+require_relative 'string'
 
 module Transcode
   # Handles input parameters.
@@ -23,9 +23,9 @@ module Transcode
       ['-i', '--tit tit', 'Specific title number.', Array, :tit],
       ['-w', '--wid wid', 'Width of the table.', Integer, :wid]
     ].freeze
-    EXT = %i[
+    EXT = %w[
       avi flv m2ts m4v mkv mp4 mpg mpeg mov ts webm vob wmv
-    ].map(&:to_s).join(',').freeze
+    ].join(',').freeze
 
     def add(opt)
       opt.on('-v', '--version', 'Show version.') do
@@ -55,8 +55,7 @@ module Transcode
       @files = Dir.glob("#{dir}/*.{#{EXT}}").select { |f| File.file? f }
       sub = !mp3?
       @files += Dir.glob("#{dir}/*").select { |f| File.directory? f } if sub
-      @files.sort_by!(&:naturalized)
-      @files.sort_by!(&:swapcase)
+      @files.sort_by! { |f| f.swapcase.naturalized }
     end
 
     def validate

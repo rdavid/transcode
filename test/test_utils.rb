@@ -5,6 +5,8 @@
 # SPDX-License-Identifier: 0BSD
 
 require 'minitest/autorun'
+require_relative '../lib/transcode/string'
+require_relative '../lib/transcode/timer'
 require_relative '../lib/transcode/utils'
 
 class TestUtils < Minitest::Test

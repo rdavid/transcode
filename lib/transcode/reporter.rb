@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: 0BSD
 
 require 'terminal-table'
+require_relative 'timer'
 require_relative 'utils'
 
 module Transcode

@@ -5,11 +5,9 @@
 # SPDX-License-Identifier: 0BSD
 
 source 'https://rubygems.org'
-gem 'ellipsized'
+gemspec
 gem 'minitest'
 gem 'rake'
-gem 'terminal-table'
-gem 'video_transcoding'
 group :rubocop do
   gem 'rubocop'
   gem 'rubocop-minitest'

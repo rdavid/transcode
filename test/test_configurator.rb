@@ -35,6 +35,15 @@ class TestConfigurator < Minitest::Test
     end
   end
 
+  def test_sorts_files_naturally
+    Dir.mktmpdir do |dir|
+      touch(dir, 'b10.mkv', 'b2.mkv')
+      cfg = configure(dir)
+
+      assert_equal(%w[b2.mkv b10.mkv], cfg.files.map { |f| File.basename(f) })
+    end
+  end
+
   def test_rejects_empty_dir
     Dir.mktmpdir do |dir|
       err = assert_raises(RuntimeError) { configure(dir) }
