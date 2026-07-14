@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
-      contents: read
+      contents: write
       id-token: write
     steps:
       - uses: actions/checkout@v7.0.0
@@ -28,3 +28,6 @@ jobs:
       - uses: rubygems/configure-rubygems-credentials@v2.1.0
       - run: gem build transcode.gemspec
       - run: gem push "transcode-$GITHUB_REF_NAME.gem"
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" --generate-notes
