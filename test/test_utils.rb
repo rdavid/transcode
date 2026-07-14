@@ -12,14 +12,25 @@ class TestUtils < Minitest::Test
     @tim = Timer.new
   end
 
-  def test_timer
+  def test_timer_read
     assert_equal(Timer.less_sec, @tim.read)
-    sleep(1)
+  end
 
-    assert_equal('1 second', @tim.read)
-    sleep(1)
+  def test_humanize_boundaries
+    assert_empty(@tim.humanize(nil))
+    assert_equal(Timer.less_sec, @tim.humanize(0.5))
+  end
 
-    assert_equal('2 seconds', @tim.read)
+  def test_humanize_intervals
+    assert_equal('1 second', @tim.humanize(1))
+    assert_equal('2 seconds', @tim.humanize(2))
+    assert_equal('1 minute 1 second', @tim.humanize(61))
+    assert_equal('1 hour 1 minute 1 second', @tim.humanize(3661))
+  end
+
+  def test_naturalized
+    assert_equal(['Filename ', 10.0], 'Filename 10'.naturalized)
+    assert_equal(%w[a2 a10], %w[a10 a2].sort_by(&:naturalized))
   end
 
   def test_trim
@@ -29,5 +40,9 @@ class TestUtils < Minitest::Test
     assert_equal("te#{s}ls", Utils.trim('tensymbols', 5))
     assert_equal("nin#{s}bo", Utils.trim('ninesymbo', 6))
     assert_equal("ten#{s}ls", Utils.trim('tensymbols', 6))
+  end
+
+  def test_trim_short_input
+    assert_equal('short', Utils.trim('short', 10))
   end
 end

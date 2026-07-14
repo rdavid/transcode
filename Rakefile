@@ -4,9 +4,11 @@
 # SPDX-FileCopyrightText: 2020-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
+require 'rake/testtask'
+
 task default: %w[test]
 
 desc 'Run the test suite'
-task :test do
-  ruby 'test/test_utils.rb'
+Rake::TestTask.new(:test) do |t|
+  t.pattern = 'test/test_*.rb'
 end

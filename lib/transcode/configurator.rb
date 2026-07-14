@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: 0BSD
 
 require 'optparse'
+require_relative 'utils'
 
 module Transcode
   # Handles input parameters.
