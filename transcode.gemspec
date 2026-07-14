@@ -5,7 +5,7 @@
 
 $LOAD_PATH.unshift File.expand_path("#{File.dirname(__FILE__)}/lib")
 
-require 'transcode'
+require 'transcode/version'
 
 Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
