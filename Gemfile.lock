@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    transcode (1.0.5)
+    transcode (1.0.6)
       ellipsized (~> 0.3)
       terminal-table (~> 4.0)
       video_transcoding (~> 0.25)

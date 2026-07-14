@@ -5,6 +5,6 @@
 # SPDX-License-Identifier: 0BSD
 
 module Transcode
-  VERSION = '1.0.5'
-  DATE = '2025-08-04'
+  VERSION = '1.0.6'
+  DATE = '2026-07-15'
 end
