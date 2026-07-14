@@ -38,9 +38,13 @@ jobs:
           - 3.2
           - 3.3
           - 3.4
+        include:
+          - os: ubuntu-24.04
+            ruby: head
     name: Rake on ${{ matrix.os }} / Ruby ${{ matrix.ruby }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
+    continue-on-error: ${{ matrix.ruby == 'head' }}
     steps:
       - uses: actions/checkout@v7.0.0
         with:
