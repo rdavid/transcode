@@ -9,6 +9,7 @@ name: actionlint
   push:
     branches: [master]
     paths: *paths
+  workflow_dispatch:
 permissions:
   contents: read
 concurrency:
@@ -28,4 +29,6 @@ jobs:
           url="https://raw.githubusercontent.com/rhysd/actionlint"
           bash <(curl --silent \
             "$url/v$ver/scripts/download-actionlint.bash") "$ver"
-      - run: ${{ steps.get.outputs.executable }}
+      - env:
+          EXE: ${{ steps.get.outputs.executable }}
+        run: "$EXE"

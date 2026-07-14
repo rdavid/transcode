@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2026 David Rabkin
+# SPDX-License-Identifier: 0BSD
+#
+# Accepts exact version tags as pins. The repository policy pins
+# actions to tags such as v1.2.3, not to commit hashes.
+---
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        '*': ref-pin
