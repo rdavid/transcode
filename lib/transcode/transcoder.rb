@@ -40,9 +40,10 @@ module Transcode
       c + " #{file.shellescape}"
     end
 
-    # Converts file, audio, subtitle, and title arrays into an array:
-    #   [ file1 [ aud1, sub1, tit1 ] ]
-    #   [ file2 [ aud2, sub2, tit2 ] ]
+    # Converts file, audio, subtitle, and title arrays into an array of
+    # pairs:
+    #   [ file1, [ aud1, sub1, tit1 ] ]
+    #   [ file2, [ aud2, sub2, tit2 ] ]
     def data
       @data ||= @cfg.files.zip([@cfg.aud, @cfg.sub, @cfg.tit].transpose)
     end
