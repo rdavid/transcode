@@ -21,10 +21,15 @@
 
 = Transcode
 
-image:{img-rake}[rake,link={url-rake}]
-image:{img-gem}[gem version,link={url-gem}]
-image:{img-hoc}[hits of code,link={url-hoc}]
-image:{img-license}[license,link={url-license}]
+[subs=attributes+]
+++++
+<div align="right">
+<a href="{url-rake}"><img src="{img-rake}" alt="rake"></a>
+<a href="{url-gem}"><img src="{img-gem}" alt="gem version"></a>
+<a href="{url-hoc}"><img src="{img-hoc}" alt="hits of code"></a>
+<a href="{url-license}"><img src="{img-license}" alt="license"></a>
+</div>
+++++
 
 toc::[]
 
