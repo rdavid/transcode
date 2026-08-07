@@ -27,8 +27,13 @@ jobs:
         run: |
           ver=1.7.12
           url="https://raw.githubusercontent.com/rhysd/actionlint"
-          bash <(curl --silent \
-            "$url/v$ver/scripts/download-actionlint.bash") "$ver"
+          curl \
+            --fail \
+            --location \
+            --silent \
+            --show-error \
+            "$url/v$ver/scripts/download-actionlint.bash" |
+            bash -s "$ver"
       - env:
           EXE: ${{ steps.get.outputs.executable }}
         run: "$EXE"

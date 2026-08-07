@@ -4,6 +4,11 @@
 name: dependency-review
 'on':
   pull_request:
+    paths:
+      - Gemfile
+      - Gemfile.lock
+      - transcode.gemspec
+      - .github/workflows/dependency-review.yml
 permissions:
   contents: read
 concurrency:
