@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: 2026 David Rabkin
+# SPDX-License-Identifier: 0BSD
+---
+name: codeql
+'on':
+  pull_request:
+    paths: &paths
+      - '**/*.rb'
+      - bin/**
+      - Gemfile
+      - Gemfile.lock
+      - Rakefile
+      - '*.gemspec'
+      - .github/workflows/**
+  push:
+    branches: [master]
+    paths: *paths
+  schedule:
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+  security-events: write
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  codeql:
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [actions, ruby]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: github/codeql-action/init@v4.37.0
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: none
+      - uses: github/codeql-action/analyze@v4.37.0
+        with:
+          category: /language:${{ matrix.language }}
