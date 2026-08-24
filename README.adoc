@@ -47,11 +47,12 @@ endif::[]
 
 == About
 
-Transcode is a command-line tool that converts whole directories of video
-files in one run.
-It wraps {url-melton}[Lisa Melton's] {url-video}[Video Transcoding],
-which converts one file per invocation, and applies the same workflow
-to every video in a directory with a single command.
+Transcode converts whole directories of video files in one run, from the
+command line.
+It wraps {url-melton}[Lisa Melton's] {url-video}[Video Transcoding], which
+converts one file per invocation.
+Transcode applies that same workflow to every video in a directory with a
+single command.
 
 Transcode can:
 
@@ -69,8 +70,7 @@ It recognizes these input formats: `avi`, `flv`, `m2ts`, `m4v`, `mkv`,
 Transcode ships as a Ruby gem and requires Ruby 3.2 or later.
 It runs on macOS, GNU/Linux, Windows, and any other system Ruby
 supports.
-See {url-ruby}[Installing Ruby] if Ruby 3.2+ is not available on your
-platform.
+See {url-ruby}[Installing Ruby] if your platform lacks Ruby 3.2+.
 
 Install with:
 
@@ -153,7 +153,7 @@ transcode --mp3 --act
 
 == License
 
-`transcode` is copyright {url-cv}[David Rabkin] and available under a
+`transcode` carries copyright by {url-cv}[David Rabkin] and ships under a
 {url-license}[Zero-Clause BSD license].
 
 ifdef::pages-build[]
