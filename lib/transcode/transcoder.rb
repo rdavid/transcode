@@ -55,10 +55,28 @@ module Transcode
       end
     end
 
+    def mp3_dst(file)
+      "#{@cfg.out}/#{File.basename(file, '.*')}.mp3"
+    end
+
+    # Skips files whose destination MP3 already exists, so reruns only
+    # convert what's missing.
+    def mp3_files
+      @cfg.files.reject do |f|
+        dst = mp3_dst(f)
+        File.exist?(dst).tap { |exists| warn "Skip: #{f} exists as #{dst}." if exists }
+      end
+    end
+
+    # -q:a 0 requests libmp3lame's highest VBR quality (V0), letting
+    # bitrate adapt to content complexity instead of spending a fixed
+    # rate on simple passages. No -ar is given, so ffmpeg keeps the
+    # source's sample rate when libmp3lame supports it directly (44100,
+    # 48000, 32000, and others), instead of downsampling every file,
+    # most commonly 48kHz video audio, to 44100.
     def mp3_cmd(file)
-      file = file.shellescape
-      "ffmpeg -i #{file} -vn -ar 44100 -ac 2 -ab 192k -f mp3 " \
-        "#{@cfg.out}/#{File.basename(file, '.*')}.mp3"
+      "ffmpeg -nostdin -i #{file.shellescape} -ac 2 -f mp3 -q:a 0 -vn " \
+        "#{mp3_dst(file)}"
     end
 
     def scn_cmd(file)
@@ -67,7 +85,7 @@ module Transcode
 
     def do
       if @cfg.mp3?
-        @cfg.files.each { |f| @rep.add(f, @cfg.act? ? run(mp3_cmd(f)) : true) }
+        mp3_files.each { |f| @rep.add(f, @cfg.act? ? run(mp3_cmd(f)) : true) }
       elsif @cfg.sca?
         @cfg.files.each { |f| @rep.add(f, run(scn_cmd(f))) }
       else

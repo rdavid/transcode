@@ -28,7 +28,30 @@ class TestTranscoder < Minitest::Test
     Dir.mktmpdir do |dir|
       cmd = transcoder(dir).mp3_cmd(File.join(dir, 'a.mkv'))
 
-      assert_match(/^ffmpeg -i .*a\.mkv .*-f mp3 .*a\.mp3$/, cmd)
+      assert_match(/^ffmpeg -nostdin -i .*a\.mkv .*-f mp3 .*a\.mp3$/, cmd)
+      assert_includes(cmd, '-q:a 0')
+      refute_includes(cmd, '-ar')
+      refute_includes(cmd, '-ab')
+    end
+  end
+
+  def test_mp3_files_skips_existing_destination
+    Dir.mktmpdir do |dir|
+      t = transcoder(dir)
+      File.write(File.join(dir, 'a.mp3'), '')
+      files = nil
+      _, err = capture_io { files = t.mp3_files }
+
+      assert_empty(files)
+      assert_match(/Skip: .*a\.mkv exists as .*a\.mp3/, err)
+    end
+  end
+
+  def test_mp3_files_includes_missing_destination
+    Dir.mktmpdir do |dir|
+      t = transcoder(dir)
+
+      assert_equal([File.join(dir, 'a.mkv')], t.mp3_files)
     end
   end
 
