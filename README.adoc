@@ -2,10 +2,10 @@
 :toc: macro
 :!toc-title:
 // URLs:
-:img-gem: https://badge.fury.io/rb/transcode.svg
+:img-gem: https://img.shields.io/gem/v/transcode?color=dfaf8f&labelColor=555555&logo=rubygems&logoColor=dcdccc&style=flat
 :img-hoc: https://hitsofcode.com/github/rdavid/transcode?branch=master&label=hits%20of%20code
-:img-license: https://img.shields.io/github/license/rdavid/transcode?color=blue&labelColor=gray&logo=freebsd&logoColor=lightgray&style=flat
-:img-rake: https://github.com/rdavid/transcode/actions/workflows/rake.yml/badge.svg
+:img-license: https://img.shields.io/github/license/rdavid/transcode?color=8cd0d3&labelColor=555555&logo=freebsd&logoColor=dcdccc&style=flat
+:img-rake: https://img.shields.io/github/actions/workflow/status/rdavid/transcode/rake.yml?branch=master&label=rake&color=7f9f7f&labelColor=555555&logo=github&logoColor=dcdccc&style=flat
 :url-cv: http://cv.rabkin.co.il
 :url-gem: https://badge.fury.io/rb/transcode
 :url-hoc: https://hitsofcode.com/view/github/rdavid/transcode?branch=master
