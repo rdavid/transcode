@@ -4,9 +4,9 @@
 // URLs:
 :img-gem: https://img.shields.io/gem/v/transcode?color=dfaf8f&labelColor=555555&logo=rubygems&logoColor=dcdccc&style=flat
 :img-hoc: https://hitsofcode.com/github/rdavid/transcode?branch=master&label=hits%20of%20code
-:img-license: https://img.shields.io/github/license/rdavid/transcode?color=8cd0d3&labelColor=555555&logo=freebsd&logoColor=dcdccc&style=flat
+:img-license: https://img.shields.io/github/license/rdavid/transcode?color=94bff3&labelColor=555555&logo=freebsd&logoColor=dcdccc&style=flat
 :img-rake: https://img.shields.io/github/actions/workflow/status/rdavid/transcode/rake.yml?branch=master&label=rake&color=7f9f7f&labelColor=555555&logo=github&logoColor=dcdccc&style=flat
-:img-rubocop: https://img.shields.io/github/actions/workflow/status/rdavid/transcode/rubocop.yml?branch=master&color=94bff3&label=rubocop&labelColor=555555&logoColor=dcdccc&style=flat
+:img-rubocop: https://img.shields.io/github/actions/workflow/status/rdavid/transcode/rubocop.yml?branch=master&color=8cd0d3&label=rubocop&labelColor=555555&logoColor=dcdccc&style=flat
 :img-style: https://img.shields.io/badge/code_style-rubocop-f0dfaf?labelColor=555555&style=flat
 :url-cv: http://cv.rabkin.co.il
 :url-gem: https://badge.fury.io/rb/transcode
