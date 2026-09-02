@@ -13,22 +13,22 @@ module Transcode
     attr_reader :files
 
     DIC = [
-      ['-a', '--act', 'Perform actual encoding.', nil, :act],
-      ['-u', '--aud aud', 'Audio stream numbers.', Array, :aud],
-      ['-d', '--dir dir', 'Source directory to transcode.', String, :dir],
-      ['-m', '--mp3', 'Convert files to MP3.', nil, :mp3],
-      ['-o', '--out out', 'Output directory.', String, :out],
-      ['-s', '--sca', 'Scan files in the directory.', nil, :sca],
-      ['-t', '--sub sub', 'Subtitle stream numbers.', Array, :sub],
-      ['-i', '--tit tit', 'Specific title number.', Array, :tit],
-      ['-w', '--wid wid', 'Width of the table.', Integer, :wid]
+      ['-a', '--act', 'Performs actual encoding.', nil, :act],
+      ['-u', '--aud aud', 'Sets the audio stream numbers.', Array, :aud],
+      ['-d', '--dir dir', 'Sets the directory to transcode.', String, :dir],
+      ['-m', '--mp3', 'Converts files to MP3.', nil, :mp3],
+      ['-o', '--out out', 'Sets the output directory.', String, :out],
+      ['-s', '--sca', 'Scans files in the directory.', nil, :sca],
+      ['-t', '--sub sub', 'Sets the subtitle stream numbers.', Array, :sub],
+      ['-i', '--tit tit', 'Sets the title number.', Array, :tit],
+      ['-w', '--wid wid', 'Sets the output table width.', Integer, :wid]
     ].freeze
     EXT = %w[
       avi flv m2ts m4v mkv mp4 mpg mpeg mov ts webm vob wmv
     ].join(',').freeze
 
     def add(opt)
-      opt.on('-v', '--version', 'Show version.') do
+      opt.on('-v', '--version', 'Shows the version.') do
         puts "#{File.basename($PROGRAM_NAME)} #{VERSION} #{DATE}"
         exit
       end
