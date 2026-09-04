@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2026 David Rabkin
+# SPDX-License-Identifier: 0BSD
+
+# Actions are deliberately pinned to exact version tags rather than
+# commit hashes, so the actions/unpinned-tag query only produces false
+# positives here.
+---
+name: transcode CodeQL config
+queries:
+  - uses: security-and-quality
+query-filters:
+  - exclude:
+      id: actions/unpinned-tag
