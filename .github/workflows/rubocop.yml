@@ -1,5 +1,9 @@
 # SPDX-FileCopyrightText: 2025-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
+#
+# The pull-requests:write permission below is scoped to the rubocop job
+# alone (not the workflow default) so that reviewdog can post inline
+# review comments on the triggering pull request.
 ---
 name: rubocop
 'on':
@@ -19,7 +23,6 @@ name: rubocop
   workflow_dispatch:
 permissions:
   contents: read
-  pull-requests: write
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
@@ -27,6 +30,9 @@ jobs:
   rubocop:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: write
     env:
       BUNDLE_ONLY: rubocop
     steps:

@@ -1,5 +1,9 @@
 # SPDX-FileCopyrightText: 2025-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
+#
+# The pull-requests:write permission below is scoped to the vale job
+# alone (not the workflow default) so that vale-action can post inline
+# review comments on the triggering pull request.
 ---
 name: vale
 'on':
@@ -17,7 +21,6 @@ name: vale
   workflow_dispatch:
 permissions:
   contents: read
-  pull-requests: write
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
@@ -25,6 +28,9 @@ jobs:
   vale:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v7.0.1
         with:
