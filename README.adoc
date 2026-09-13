@@ -68,7 +68,7 @@ Transcode can:
 It recognizes these input formats: `avi`, `flv`, `m2ts`, `m4v`, `mkv`,
 `mp4`, `mpg`, `mpeg`, `mov`, `ts`, `webm`, `vob`, and `wmv`.
 
-== Installation
+== Install
 
 Transcode ships as a Ruby gem and requires Ruby 3.2 or later.
 It runs on macOS, GNU/Linux, Windows, and any other system Ruby
@@ -82,7 +82,7 @@ Install with:
 gem install transcode
 ----
 
-== Updating
+== Update
 
 Update with:
 
@@ -96,7 +96,7 @@ gem update transcode
 See Video Transcoding's {url-requirements}[requirements] for external
 dependencies.
 
-== Usage
+== Using
 
 [,sh]
 ----
