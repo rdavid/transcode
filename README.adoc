@@ -7,12 +7,15 @@
 :img-license: https://img.shields.io/github/license/rdavid/transcode?color=94bff3&labelColor=555555&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRleHQgeD0iMTIiIHk9IjIwIiBmb250LWZhbWlseT0iSGVsdmV0aWNhLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkY2RjY2MiPiYjMTY5OzwvdGV4dD48L3N2Zz4%3D&style=flat
 :img-rake: https://img.shields.io/github/actions/workflow/status/rdavid/transcode/rake.yml?branch=master&label=rake&color=7f9f7f&labelColor=555555&logo=github&logoColor=dcdccc&style=flat
 :img-rubocop: https://img.shields.io/github/actions/workflow/status/rdavid/transcode/rubocop.yml?branch=master&color=8cd0d3&label=rubocop&labelColor=555555&logo=rubocop&logoColor=dcdccc&style=flat
+:url-brew: https://brew.sh
 :url-cv: http://cv.rabkin.co.il
 :url-gem: https://badge.fury.io/rb/transcode
 :url-hoc: https://hitsofcode.com/view/github/rdavid/transcode?branch=master
 :url-license: https://github.com/rdavid/transcode/blob/master/LICENSES/0BSD.txt
 :url-melton: https://github.com/lisamelton/video_transcoding
 :url-rake: https://github.com/rdavid/transcode/actions/workflows/rake.yml
+:url-tap: https://rdavid.github.io/homebrew-tap
+:url-pages: https://rdavid.github.io/transcode
 :url-reuse: https://github.com/fsfe/reuse-action
 :url-rubocop: https://github.com/rdavid/transcode/actions/workflows/rubocop.yml
 :url-requirements: https://github.com/lisamelton/video_transcoding/blob/master/README.md?ts=2#requirements
@@ -56,6 +59,9 @@ It wraps {url-melton}[Lisa Melton's] {url-video}[Video Transcoding], which
 converts one file per invocation.
 Transcode applies that same workflow to every video in a directory with one
 command.
+ifndef::pages-build[]
+The project has a {url-pages}[website].
+endif::[]
 
 Transcode can:
 
@@ -82,13 +88,11 @@ Install with:
 gem install transcode
 ----
 
-== Update
-
-Update with:
+Or install with {url-brew}[Homebrew] from the {url-tap}[tap]:
 
 [,sh]
 ----
-gem update transcode
+brew install rdavid/tap/transcode
 ----
 
 == Requirements
@@ -96,7 +100,7 @@ gem update transcode
 See Video Transcoding's {url-requirements}[requirements] for external
 dependencies.
 
-== Using
+== Usage
 
 [,sh]
 ----
@@ -118,12 +122,12 @@ It prints the commands it would run and a summary table without changing any
 files.
 Adding `--act` starts the encoding.
 
-Without `--dir` and `--out`, Transcode reads from and writes to the current
-directory.
+Without `--dir` and `--out`, Transcode uses the current directory
+for both.
 The `--aud` and `--sub` options take comma-separated stream numbers: one
 value applies to every file, or each file takes its own value.
 
-== Examples
+== Example
 
 Scan the source directory to inspect the available audio and subtitle
 streams:
