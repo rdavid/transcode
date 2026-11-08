@@ -8,7 +8,7 @@ require 'optparse'
 require_relative 'string'
 
 module Transcode
-  # Handles input parameters.
+  # Parses command-line options, finds the input files, and validates both.
   class Configurator # rubocop:disable Metrics/ClassLength
     attr_reader :files
 
@@ -27,6 +27,7 @@ module Transcode
       avi flv m2ts m4v mkv mp4 mpg mpeg mov ts webm vob wmv
     ].join(',').freeze
 
+    # Adds the --version option, which prints the version and exits.
     def add(opt)
       opt.on('-v', '--version', 'Shows the version.') do
         puts "#{File.basename($PROGRAM_NAME)} #{VERSION} #{DATE}"
@@ -46,11 +47,16 @@ module Transcode
       validate
     end
 
+    # Expands the source and output directories. Both default to the
+    # current directory.
     def find_dir
       @options[:dir] = File.expand_path(dir.nil? ? Dir.pwd : dir)
       @options[:out] = File.expand_path(out.nil? ? Dir.pwd : out)
     end
 
+    # Collects the video files in the source directory in natural order.
+    # Subdirectories count as inputs too, such as ripped disc folders,
+    # except in MP3 mode.
     def find_fil
       @files = Dir.glob("#{dir}/*.{#{EXT}}").select { |f| File.file? f }
       sub = !mp3?
@@ -81,6 +87,8 @@ module Transcode
       raise "#{bad.join(',')}: Permission denied." unless bad.empty?
     end
 
+    # Fills the titles with '0' when none are given. Several titles work
+    # with one input only. It repeats that input once per title.
     def validate_tit
       if tit.nil?
         @options[:tit] = Array.new(files.size, '0')
@@ -93,6 +101,8 @@ module Transcode
       raise "Title feature doesn't support #{files.size} files."
     end
 
+    # Fills the audio or subtitle tracks with '0' when none are given. One
+    # value applies to every file. A list must match the file count.
     def validate_val(val, tag)
       f = files.size
       (@options[tag] = Array.new(f, '0')).nil? || return if val.nil?

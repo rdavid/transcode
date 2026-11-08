@@ -22,6 +22,8 @@ module Transcode
       @sta = { converted: 0, failed: 0 }
     end
 
+    # Adds a table row for a file and counts its result. The track columns
+    # appear only when an audio or subtitle value is set.
     def add(file, res, aud = 0, sub = 0, tit = 0)
       row = [Utils.trim(File.basename(file), @str)]
       if aud != 0 || sub != 0
@@ -35,6 +37,7 @@ module Transcode
       @sta[res ? :converted : :failed] += 1
     end
 
+    # Returns the column headings that match the rows.
     def head
       head = [{ value: 'file', alignment: :center }]
       if @row.first.size == 4
@@ -56,12 +59,14 @@ module Transcode
       )
     end
 
+    # Prints the table with a footer that sums up the run and its time.
     def do
       msg = "#{@act ? 'Real' : 'Test'}:#{stat} in #{@tim.read}."
       msg = Utils.trim(msg, @ttl)
       puts "#{table}\n| #{msg}#{' ' * (@ttl - msg.length)} |\n+-#{'-' * @ttl}-+"
     end
 
+    # Returns the nonzero result counts, such as ' 2 converted, 1 failed'.
     def stat
       out = ''
       @sta.each do |k, v|

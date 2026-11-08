@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: 0BSD
 
 # Adds a natural sort method. It converts a string such as "Filename 10"
-# into an array with floats in place of numbers, ["Filename", 10.0], as
+# into an array with floats in place of numbers, ["Filename ", 10.0], as
 # suggested in https://stackoverflow.com/q/4078906.
 class String
   def naturalized

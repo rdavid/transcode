@@ -12,6 +12,8 @@ class Utils
   class << self
     attr_accessor :sep
 
+    # Shortens a string to the limit by replacing its middle with the
+    # separator.
     def trim(src, lim)
       src.ellipsized(lim, @sep, :center)
     end

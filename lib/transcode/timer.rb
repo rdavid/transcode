@@ -26,6 +26,7 @@ class Timer
     humanize(Time.now - @sta)
   end
 
+  # Formats seconds as text, such as '1 hour 1 minute 1 second'.
   def humanize(sec)
     return '' if sec.nil?
     return Timer.less_sec if sec < 1
