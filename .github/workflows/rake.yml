@@ -35,9 +35,10 @@ jobs:
           - windows-2022
           - windows-2025
         ruby:
-          - 3.2
-          - 3.3
-          - 3.4
+          - '3.2'
+          - '3.3'
+          - '3.4'
+          - '4.0'
         include:
           - os: ubuntu-24.04
             ruby: head

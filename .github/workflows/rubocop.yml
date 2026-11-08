@@ -3,7 +3,8 @@
 #
 # The pull-requests:write permission below is scoped to the rubocop job
 # alone (not the workflow default) so that reviewdog can post inline
-# review comments on the triggering pull request.
+# review comments on the triggering pull request. The github-pr-review
+# reporter replaces the default github-pr-check one for the same reason.
 ---
 name: rubocop
 'on':
@@ -41,10 +42,10 @@ jobs:
           persist-credentials: false
       - uses: ruby/setup-ruby@v1.336.0
         with:
-          ruby-version: 3.2
+          ruby-version: '3.2'
           bundler-cache: true
       - uses: reviewdog/action-rubocop@v2.22.0
         with:
-          reporter: github-pr-review  # Default is github-pr-check
+          reporter: github-pr-review
           skip_install: true
           use_bundler: true

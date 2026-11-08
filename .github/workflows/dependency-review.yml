@@ -7,7 +7,7 @@ name: dependency-review
     paths:
       - Gemfile
       - Gemfile.lock
-      - transcode.gemspec
+      - '*.gemspec'
       - .github/workflows/dependency-review.yml
 permissions:
   contents: read

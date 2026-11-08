@@ -27,8 +27,5 @@ jobs:
           persist-credentials: false
       - uses: ibiqlik/action-yamllint@v3.1.1
         with:
-          file_or_dir: >
-            ./.github/*.yml
-            ./.github/workflows/*.yml
-            ./.rubocop.yml
+          file_or_dir: .
           strict: true
