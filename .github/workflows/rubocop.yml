@@ -44,7 +44,7 @@ jobs:
         with:
           ruby-version: '3.2'
           bundler-cache: true
-      - uses: reviewdog/action-rubocop@v2.22.0
+      - uses: reviewdog/action-rubocop@v2.23.0
         with:
           reporter: github-pr-review
           skip_install: true
