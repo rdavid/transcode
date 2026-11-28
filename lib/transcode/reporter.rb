@@ -63,7 +63,8 @@ module Transcode
     def do
       msg = "#{@act ? 'Real' : 'Test'}:#{stat} in #{@tim.read}."
       msg = Utils.trim(msg, @ttl)
-      puts "#{table}\n| #{msg}#{' ' * (@ttl - msg.length)} |\n+-#{'-' * @ttl}-+"
+      pad = ' ' * (@ttl - msg.length)
+      puts "#{table}\n| #{msg}#{pad} |\n+-#{'-' * @ttl}-+"
     end
 
     # Returns the nonzero result counts, such as ' 2 converted, 1 failed'.

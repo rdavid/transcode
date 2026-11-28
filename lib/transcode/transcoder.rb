@@ -67,7 +67,9 @@ module Transcode
     def mp3_files
       @cfg.files.reject do |f|
         dst = mp3_dst(f)
-        File.exist?(dst).tap { |exists| warn "Skip: #{f} exists as #{dst}." if exists }
+        File.exist?(dst).tap do |exi|
+          warn "Skip: #{f} exists as #{dst}." if exi
+        end
       end
     end
 
