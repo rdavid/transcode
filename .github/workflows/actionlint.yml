@@ -26,17 +26,19 @@ jobs:
       - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
-      - id: get
-        run: |
+      - run: |
+          srv=https://github.com/rhysd/actionlint
           ver=1.7.12
-          url="https://raw.githubusercontent.com/rhysd/actionlint"
+          sum=8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8
+          tgz=actionlint_${ver}_linux_amd64.tar.gz
           curl \
             --fail \
             --location \
+            --output "$tgz" \
+            --retry 3 \
             --show-error \
             --silent \
-            "$url/v$ver/scripts/download-actionlint.bash" |
-            bash -s "$ver"
-      - env:
-          EXE: ${{ steps.get.outputs.executable }}
-        run: "$EXE"
+            "$srv/releases/download/v$ver/$tgz"
+          printf '%s  %s\n' "$sum" "$tgz" | sha256sum -c -
+          tar -xzf "$tgz" actionlint
+          ./actionlint

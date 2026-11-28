@@ -11,7 +11,8 @@
 # commit is checked. GITHUB_EVENT_NAME and GITHUB_BASE_REF are plain runner
 # environment variables here, not template-expanded strings. So the branching
 # stays free of template injection. conform has no stable release yet, so the
-# pin below tracks the latest alpha.
+# pin below tracks the latest alpha. The binary is checked against its pinned
+# SHA-256 sum before it runs.
 ---
 name: conform
 'on':
@@ -40,6 +41,7 @@ jobs:
       - run: |
           srv=https://github.com/siderolabs/conform
           ver=0.1.0-alpha.31
+          sum=344dd5fad42c61bf739491b490d453943d06f9aaed5488a738c0bbd4588b6914
           url=$srv/releases/download/v$ver/conform-linux-amd64
           curl \
             --fail \
@@ -49,6 +51,7 @@ jobs:
             --show-error \
             --silent \
             "$url"
+          printf '%s  conform\n' "$sum" | sha256sum -c -
           chmod +x conform
           if [ "$GITHUB_EVENT_NAME" = pull_request ]; then
             ./conform enforce --base-branch "origin/$GITHUB_BASE_REF"
