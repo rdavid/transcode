@@ -8,6 +8,10 @@ source 'https://rubygems.org'
 gemspec
 gem 'minitest'
 gem 'rake'
+group :docs do
+  gem 'asciidoctor'
+  gem 'logger'
+end
 group :rubocop do
   gem 'rubocop'
   gem 'rubocop-minitest'

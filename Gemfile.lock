@@ -9,12 +9,14 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    asciidoctor (2.0.26)
     ast (2.4.3)
     drb (2.2.3)
     ellipsized (0.3.0)
     json (3.2.0)
     language_server-protocol (3.17.0.6)
     lint_roller (1.1.0)
+    logger (1.7.0)
     minitest (6.1.0)
       drb (~> 2.0)
       prism (>= 1.5, < 3)
@@ -67,6 +69,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  asciidoctor
+  logger
   minitest
   rake
   rubocop
