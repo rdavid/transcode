@@ -7,8 +7,8 @@
 :img-license: https://img.shields.io/github/license/rdavid/transcode?color=94bff3&labelColor=555555&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHRleHQgeD0iMTIiIHk9IjIwIiBmb250LWZhbWlseT0iSGVsdmV0aWNhLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNkY2RjY2MiPiYjMTY5OzwvdGV4dD48L3N2Zz4%3D&style=flat
 :img-rake: https://img.shields.io/github/actions/workflow/status/rdavid/transcode/rake.yml?branch=master&label=rake&color=7f9f7f&labelColor=555555&logo=github&logoColor=dcdccc&style=flat
 :img-rubocop: https://img.shields.io/github/actions/workflow/status/rdavid/transcode/rubocop.yml?branch=master&color=8cd0d3&label=rubocop&labelColor=555555&logo=rubocop&logoColor=dcdccc&style=flat
+:url-author: https://rdavid.github.io/
 :url-brew: https://brew.sh
-:url-cv: http://cv.rabkin.co.il
 :url-gem: https://badge.fury.io/rb/transcode
 :url-hoc: https://hitsofcode.com/view/github/rdavid/transcode?branch=master
 :url-license: https://github.com/rdavid/transcode/blob/master/LICENSES/0BSD.txt
@@ -157,7 +157,7 @@ transcode --act --mp3
 
 == License
 
-Copyright {url-cv}[David Rabkin].
+Copyright {url-author}[David Rabkin].
 Transcode ships under the {url-license}[Zero-Clause BSD license].
 
 ifdef::pages-build[]
@@ -165,13 +165,14 @@ ifdef::pages-build[]
 <footer id="site-footer">
   <div class="footer-left">
     <img src="favicon.svg" alt="" width="20" height="20">
-    <span>transcode by <a href="http://cv.rabkin.co.il" target="_blank" rel="noopener">David Rabkin</a></span>
+    <span>transcode by <a href="https://rdavid.github.io/" target="_blank" rel="noopener">David Rabkin</a></span>
   </div>
   <div class="footer-links">
-    <a href="https://github.com/rdavid/transcode" target="_blank" rel="noopener">GitHub</a>
     <a href="https://badge.fury.io/rb/transcode" target="_blank" rel="noopener">RubyGems</a>
     <a href="https://github.com/rdavid/transcode/releases" target="_blank" rel="noopener">Releases</a>
-    <a href="https://github.com/rdavid/transcode/blob/master/LICENSES/0BSD.txt" target="_blank" rel="noopener">0BSD License</a>
+    <a href="https://github.com/rdavid/transcode" target="_blank" rel="noopener" aria-label="Source" title="Source">
+      <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+    </a>
   </div>
 </footer>
 ++++

@@ -3,6 +3,19 @@ SPDX-FileCopyrightText: 2026 David Rabkin
 SPDX-License-Identifier: 0BSD
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <polygon points="7,5 19,12 7,19" fill="none" stroke="#2b2b2b" stroke-width="5.2" stroke-linejoin="round" stroke-linecap="round"/>
-  <polygon points="7,5 19,12 7,19" fill="none" stroke="#f0dfaf" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <defs>
+    <mask id="m">
+      <rect width="24" height="24" fill="#fff"/>
+      <rect x="3.6" y="5" width="2" height="1.5" rx=".4" fill="#000"/>
+      <rect x="3.6" y="9.25" width="2" height="1.5" rx=".4" fill="#000"/>
+      <rect x="3.6" y="13.5" width="2" height="1.5" rx=".4" fill="#000"/>
+      <rect x="3.6" y="17.75" width="2" height="1.5" rx=".4" fill="#000"/>
+      <rect x="18.4" y="5" width="2" height="1.5" rx=".4" fill="#000"/>
+      <rect x="18.4" y="9.25" width="2" height="1.5" rx=".4" fill="#000"/>
+      <rect x="18.4" y="13.5" width="2" height="1.5" rx=".4" fill="#000"/>
+      <rect x="18.4" y="17.75" width="2" height="1.5" rx=".4" fill="#000"/>
+      <polygon points="10,8.5 15.5,12 10,15.5" fill="#000" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <rect x="2" y="3" width="20" height="18" rx="2.5" fill="#8cd0d3" mask="url(#m)"/>
 </svg>
