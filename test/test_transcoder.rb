@@ -10,6 +10,18 @@ require 'tmpdir'
 require_relative '../lib/transcode'
 
 class TestTranscoder < Minitest::Test
+  M4V_ORDER = [
+    '^transcode-video',
+    '--burn-subtitle 2',
+    '--m4v',
+    '--main-audio 1',
+    '--no-log',
+    '--output \S+-5\.m4v',
+    '--preset veryslow',
+    '--title 5',
+    '\S+a\.mkv$'
+  ].freeze
+
   def setup
     @argv = ARGV.dup
   end
@@ -82,6 +94,14 @@ class TestTranscoder < Minitest::Test
 
       assert_includes(cmd, '--title 5')
       refute_includes(cmd, '--main-audio')
+    end
+  end
+
+  def test_m4v_cmd_orders_options
+    Dir.mktmpdir do |dir|
+      cmd = transcoder(dir).m4v_cmd(File.join(dir, 'a.mkv'), '1', '2', '5')
+
+      assert_match(Regexp.new(M4V_ORDER.join(' ')), cmd)
     end
   end
 end

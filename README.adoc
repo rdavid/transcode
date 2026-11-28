@@ -125,7 +125,7 @@ List the audio and subtitle tracks in `[source]`:
 
 [,sh]
 ----
-transcode --sca --dir [source]
+transcode --dir [source] --sca
 ----
 
 Convert three files from `[source]` to `[destination]` with the chosen

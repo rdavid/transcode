@@ -24,7 +24,7 @@ module Transcode
       ['-w', '--wid wid', 'Sets the output table width.', Integer, :wid]
     ].freeze
     EXT = %w[
-      avi flv m2ts m4v mkv mp4 mpg mpeg mov ts webm vob wmv
+      avi flv m2ts m4v mkv mov mp4 mpeg mpg ts vob webm wmv
     ].join(',').freeze
 
     # Adds the --version option, which prints the version and exits.

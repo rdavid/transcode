@@ -31,14 +31,14 @@ module Transcode
     # Builds the transcode-video command for one file. A value of '0'
     # leaves the audio, subtitle, or title choice to transcode-video.
     def m4v_cmd(file, aud, sub, tit)
-      c = 'transcode-video --m4v --no-log --preset veryslow ' \
-          "--output #{@cfg.out}"
-      unless tit == '0'
-        c += "/#{File.basename(file.shellescape)}-#{tit}.m4v"
-        c += " --title #{tit}"
-      end
-      c += " --main-audio #{aud}" unless aud == '0'
+      out = @cfg.out
+      out += "/#{File.basename(file.shellescape)}-#{tit}.m4v" unless tit == '0'
+      c = 'transcode-video'
       c += " --burn-subtitle #{sub}" unless sub == '0'
+      c += ' --m4v'
+      c += " --main-audio #{aud}" unless aud == '0'
+      c += " --no-log --output #{out} --preset veryslow"
+      c += " --title #{tit}" unless tit == '0'
       c + " #{file.shellescape}"
     end
 
