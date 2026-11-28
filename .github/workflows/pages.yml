@@ -3,18 +3,20 @@
 ---
 name: pages
 'on':
-  push:
-    branches: [master]
-    paths:
+  pull_request:
+    paths: &paths
       - README.adoc
       - .github/pages/**
       - .github/workflows/pages.yml
+  push:
+    branches: [master]
+    paths: *paths
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 defaults:
   run:
     shell: sh
@@ -38,11 +40,14 @@ jobs:
             --attribute pages-build \
             --out-file _site/index.html \
             README.adoc
-      - uses: actions/configure-pages@v6.0.0
-      - uses: actions/upload-pages-artifact@v5.0.0
+      - if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v6.0.0
+      - if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5.0.0
         with:
           path: _site
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     permissions:
       pages: write

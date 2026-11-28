@@ -1,0 +1,55 @@
+# SPDX-FileCopyrightText: 2026 David Rabkin
+# SPDX-License-Identifier: 0BSD
+#
+# Checks the tools that workflows download in run steps, since Dependabot
+# does not track them. Opens an issue when a newer release exists, unless one
+# is already open. Updating a tool also means updating its pinned SHA-256 sum.
+---
+name: tools
+'on':
+  schedule:
+    - cron: '0 5 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: sh
+jobs:
+  tools:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          while read -r wfl rep; do
+            fle=.github/workflows/$wfl.yml
+            cur="v$(sed -n 's/^ *ver=//p' "$fle")"
+            new="$(gh api "repos/$rep/releases" --jq '.[0].tag_name')"
+            [ "$cur" = "$new" ] && continue
+            ttl="ci($wfl): update $wfl from $cur to $new"
+            num="$(
+              gh issue list \
+                --json number \
+                --jq length \
+                --search "in:title \"$ttl\"" \
+                --state open
+            )"
+            [ "$num" -gt 0 ] && continue
+            gh issue create \
+              --body "See https://github.com/$rep/releases/tag/$new." \
+              --title "$ttl"
+          done <<END
+          actionlint rhysd/actionlint
+          conform siderolabs/conform
+          END
