@@ -29,7 +29,12 @@ jobs:
           ruby-version: '4.0'
       - name: Verify the tag matches the gem version
         run: |
-          ver="$(ruby -Ilib -rtranscode/version -e 'puts Transcode::VERSION')"
+          ver="$(
+            ruby \
+              -e 'puts Transcode::VERSION' \
+              -Ilib \
+              -rtranscode/version
+          )"
           test "$ver" = "$GITHUB_REF_NAME"
       - run: |
           bundle install

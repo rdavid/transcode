@@ -1,10 +1,10 @@
 # SPDX-FileCopyrightText: 2025-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 #
-# The pull-requests:write permission below is scoped to the rubocop job
-# alone (not the workflow default) so that reviewdog can post inline
-# review comments on the triggering pull request. The github-pr-review
-# reporter replaces the default github-pr-check one for the same reason.
+# Scopes the pull-requests:write permission below to the rubocop job alone
+# (not the workflow default) so that reviewdog can post inline review
+# comments on the triggering pull request. The github-pr-review reporter
+# replaces the default github-pr-check one for the same reason.
 ---
 name: rubocop
 'on':
